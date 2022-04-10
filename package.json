@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "engines": {    "node": "16.13.1"  },
+  "scripts": {
+    "start": "nodemon app.js",
+    "build": "cd book-store && npm run build",
+    "frontend-install": "npm install --prefix book-store",
+    "frontend": "npm start --prefix book-store",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon app.js",
+    
+    "dev": " concurrently \"npm run server\" \"npm run frontend\" ",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix book-store && npm run build --prefix book-store"
+  },
+  "author": "manasa",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.8",
+    "nodemon": "^2.0.15"
+  }
+}
